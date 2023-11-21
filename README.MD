@@ -23,6 +23,8 @@
 ## 📌 ERD
 https://www.erdcloud.com/d/AH3DasZJMgb58ZB9K
 
+![erd](https://github.com/DO-SOPT-APP4-MILLIE/Millie_Server/assets/74230343/0070feba-5d9f-4459-b709-6dedc408a3ec)
+
 <br>
 
 ## 🖇 Api 명세서
