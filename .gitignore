@@ -39,3 +39,4 @@ out/
 ###
 application.properties
 application-secret.properties
+.DS_Store
