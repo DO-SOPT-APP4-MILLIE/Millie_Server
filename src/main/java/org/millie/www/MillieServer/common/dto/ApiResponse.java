@@ -14,20 +14,20 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ApiResponse<T>{
 
-    private final HttpStatus status;
-    private final String message;
+    private final int code;
+    private final String msg;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private T data;
 
     public static <T> ApiResponse<T> success(SuccessMessage success) {
-        return new ApiResponse(success.getStatus(), success.getMessage());
+        return new ApiResponse(success.getStatus().value(), success.getMessage());
     }
 
     public static <T> ApiResponse<T> success(SuccessMessage success, T data) {
-        return new ApiResponse(success.getStatus(), success.getMessage(), data);
+        return new ApiResponse(success.getStatus().value(), success.getMessage(), data);
     }
 
     public static <T> ApiResponse<T> fail(FailMessage fail) {
-        return new ApiResponse(fail.getStatus(), fail.getMessage());
+        return new ApiResponse(fail.getStatus().value(), fail.getMessage());
     }
 }
