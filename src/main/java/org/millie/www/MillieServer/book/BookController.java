@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class BookController {
 
-    private static final String CUSTOM_AUTH_ID = "X-Auth-ID";
+    private static final String CUSTOM_AUTH_ID = "X-AUTH-ID";
     private final BookService bookService;
 
     @PostMapping("/books/{bookId}/archive")
