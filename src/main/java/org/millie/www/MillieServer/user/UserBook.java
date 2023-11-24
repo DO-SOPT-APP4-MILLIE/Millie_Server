@@ -19,4 +19,13 @@ public class UserBook {
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "book_id")
         private Book book;
+
+        private UserBook(User user, Book book) {
+                this.user = user;
+                this.book = book;
+        }
+
+        public static UserBook createUserBook(User findUser, Book findBook) {
+                return new UserBook(findUser, findBook);
+        }
 }
