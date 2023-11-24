@@ -16,4 +16,8 @@ public enum SuccessMessage {
 
     private final HttpStatus status;
     private final String message;
+
+    public int getHttpStatusCode() {
+        return this.status.value();
+    }
 }

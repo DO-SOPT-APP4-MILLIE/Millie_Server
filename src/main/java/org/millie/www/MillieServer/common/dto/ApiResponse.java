@@ -5,7 +5,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.millie.www.MillieServer.common.httpmessage.FailMessage;
+import org.millie.www.MillieServer.common.httpmessage.ExceptionMessage;
 import org.millie.www.MillieServer.common.httpmessage.SuccessMessage;
 import org.springframework.http.HttpStatus;
 
@@ -20,14 +20,14 @@ public class ApiResponse<T>{
     private T data;
 
     public static <T> ApiResponse<T> success(SuccessMessage success) {
-        return new ApiResponse(success.getStatus().value(), success.getMessage());
+        return new ApiResponse(success.getHttpStatusCode(), success.getMessage());
     }
 
     public static <T> ApiResponse<T> success(SuccessMessage success, T data) {
-        return new ApiResponse(success.getStatus().value(), success.getMessage(), data);
+        return new ApiResponse(success.getHttpStatusCode(), success.getMessage(), data);
     }
 
-    public static <T> ApiResponse<T> fail(FailMessage fail) {
-        return new ApiResponse(fail.getStatus().value(), fail.getMessage());
+    public static <T> ApiResponse<T> fail(ExceptionMessage fail) {
+        return new ApiResponse(fail.getHttpStatusCode(), fail.getMessage());
     }
 }
