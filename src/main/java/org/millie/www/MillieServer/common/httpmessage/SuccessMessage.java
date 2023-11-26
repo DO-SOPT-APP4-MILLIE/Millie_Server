@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum SuccessMessage {
 
+    OK(HttpStatus.OK, "000001"),
     BEST_BOOK_LIST_SEARCH_SUCCESS(HttpStatus.OK, "000001"),
     BOOK_SEARCH_SUCCESS(HttpStatus.OK, "000001"),
     USER_ADD_BOOK_SUCCESS(HttpStatus.CREATED, "000001"),
