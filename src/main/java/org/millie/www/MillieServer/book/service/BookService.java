@@ -1,7 +1,9 @@
-package org.millie.www.MillieServer.book;
+package org.millie.www.MillieServer.book.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.millie.www.MillieServer.book.dto.response.BookSimpleResponse;
+import org.millie.www.MillieServer.book.repository.BookJpaRepository;
+import org.millie.www.MillieServer.book.domain.Book;
 import org.millie.www.MillieServer.common.exception.BusinessException;
 import org.millie.www.MillieServer.common.httpmessage.ExceptionMessage;
 import org.millie.www.MillieServer.user.User;
@@ -10,6 +12,8 @@ import org.millie.www.MillieServer.user.UserBookJpaRepository;
 import org.millie.www.MillieServer.user.UserJpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +36,9 @@ public class BookService {
         userBookRepository.save(userBook);
 
 
+    }
+
+    public List<BookSimpleResponse> getBookList() {
+        return bookRepository.findAll().stream().map(BookSimpleResponse::of).toList();
     }
 }

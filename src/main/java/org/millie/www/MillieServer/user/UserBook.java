@@ -3,7 +3,7 @@ package org.millie.www.MillieServer.user;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.millie.www.MillieServer.book.Book;
+import org.millie.www.MillieServer.book.domain.Book;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
