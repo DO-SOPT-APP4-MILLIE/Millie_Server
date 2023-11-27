@@ -2,14 +2,16 @@ package org.millie.www.MillieServer.book;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.millie.www.MillieServer.user.UserBook;
+import org.millie.www.MillieServer.user.domain.UserBook;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 public class Book {
         @Id
         @GeneratedValue
@@ -24,6 +26,9 @@ public class Book {
         private String imageUrl;
 
         private String author;
+
+        @Enumerated(EnumType.STRING)
+        private Category category;
 
         private int completionRate;
 

@@ -1,12 +1,14 @@
-package org.millie.www.MillieServer.user;
+package org.millie.www.MillieServer.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.millie.www.MillieServer.book.Book;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 public class UserBook {
         @Id @GeneratedValue
         @Column(name = "user_book_id")

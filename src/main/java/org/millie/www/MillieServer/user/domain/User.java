@@ -1,4 +1,4 @@
-package org.millie.www.MillieServer.user;
+package org.millie.www.MillieServer.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
