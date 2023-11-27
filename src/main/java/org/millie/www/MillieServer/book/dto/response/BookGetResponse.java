@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class BookGetResponse {
     private Long id;
-    private String imageUrl;
+    private String thumbnail;
 
     static public BookGetResponse of(Long id, String imgUrl){
         return new BookGetResponse(id,imgUrl);
