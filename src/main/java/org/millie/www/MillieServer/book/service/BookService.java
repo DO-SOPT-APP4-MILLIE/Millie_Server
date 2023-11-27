@@ -1,8 +1,12 @@
-package org.millie.www.MillieServer.book;
+package org.millie.www.MillieServer.book.service;
 
 import lombok.RequiredArgsConstructor;
+import org.millie.www.MillieServer.book.Category;
 import org.millie.www.MillieServer.book.dto.response.BookGetResponse;
 import org.millie.www.MillieServer.book.dto.response.PostListGetResponse;
+import org.millie.www.MillieServer.book.dto.response.BookSimpleResponse;
+import org.millie.www.MillieServer.book.repository.BookJpaRepository;
+import org.millie.www.MillieServer.book.domain.Book;
 import org.millie.www.MillieServer.common.exception.BusinessException;
 import org.millie.www.MillieServer.common.httpmessage.ExceptionMessage;
 import org.millie.www.MillieServer.user.domain.User;
@@ -37,6 +41,10 @@ public class BookService {
         userBookRepository.save(userBook);
 
 
+    }
+
+    public List<BookSimpleResponse> getBookList() {
+        return bookRepository.findAll().stream().map(BookSimpleResponse::of).toList();
     }
 
     public List<PostListGetResponse> getUserBookList(Long userId) {

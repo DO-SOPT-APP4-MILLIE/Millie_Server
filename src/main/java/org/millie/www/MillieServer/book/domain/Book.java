@@ -1,17 +1,18 @@
-package org.millie.www.MillieServer.book;
+package org.millie.www.MillieServer.book.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.millie.www.MillieServer.book.Category;
 import org.millie.www.MillieServer.user.domain.UserBook;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Book {
         @Id
         @GeneratedValue
