@@ -1,6 +1,7 @@
 package org.millie.www.MillieServer.book.service;
 
 import lombok.RequiredArgsConstructor;
+import org.millie.www.MillieServer.book.dto.response.BookResponse;
 import org.millie.www.MillieServer.book.dto.response.BookSimpleResponse;
 import org.millie.www.MillieServer.book.repository.BookJpaRepository;
 import org.millie.www.MillieServer.book.domain.Book;
@@ -27,7 +28,7 @@ public class BookService {
     public void addBookToArchive(Long bookId, Long userId) {
 
         User findUser = userRepository.findById(userId).orElseThrow(() -> new BusinessException(ExceptionMessage.MEMBER_NOT_FOUND_EXCEPTION));
-        Book findBook = bookRepository.findById(bookId).orElseThrow(() -> new BusinessException(ExceptionMessage.BOOK_NOT_FOUND_EXCEPTION));
+        Book findBook = bookRepository.findByIdOrThrow(bookId);
 
         if(userBookRepository.findByUser_idAndBook_id(userId, bookId) != null)
             throw new BusinessException(ExceptionMessage.SAME_BOOK_UPDATE_EXCEPTION);
@@ -40,5 +41,10 @@ public class BookService {
 
     public List<BookSimpleResponse> getBookList() {
         return bookRepository.findAll().stream().map(BookSimpleResponse::of).toList();
+    }
+
+    public BookResponse getBook(Long bookId) {
+        Book book = bookRepository.findByIdOrThrow(bookId);
+        return BookResponse.of(book);
     }
 }

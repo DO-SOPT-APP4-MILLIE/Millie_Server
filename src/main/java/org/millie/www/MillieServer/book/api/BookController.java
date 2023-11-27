@@ -1,6 +1,7 @@
 package org.millie.www.MillieServer.book.api;
 
 import lombok.RequiredArgsConstructor;
+import org.millie.www.MillieServer.book.dto.response.BookResponse;
 import org.millie.www.MillieServer.book.dto.response.BookSimpleResponse;
 import org.millie.www.MillieServer.book.service.BookService;
 import org.millie.www.MillieServer.common.dto.ApiResponse;
@@ -27,7 +28,12 @@ public class BookController {
     public ApiResponse<List<BookSimpleResponse>> getBookList() {
         List<BookSimpleResponse> books = bookService.getBookList();
         return ApiResponse.success(SuccessMessage.OK, books);
+    }
 
+    @GetMapping("/{bookId}")
+    public ApiResponse<BookResponse> getBook(@PathVariable Long bookId) {
+        BookResponse book = bookService.getBook(bookId);
+        return ApiResponse.success(SuccessMessage.OK, book);
     }
 
 }
