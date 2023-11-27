@@ -1,9 +1,12 @@
 package org.millie.www.MillieServer.book;
 
 import lombok.RequiredArgsConstructor;
+import org.millie.www.MillieServer.book.dto.response.PostListGetResponse;
 import org.millie.www.MillieServer.common.dto.ApiResponse;
 import org.millie.www.MillieServer.common.httpmessage.SuccessMessage;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -18,5 +21,6 @@ public class BookController {
         bookService.addBookToArchive(bookId, userId);
         return ApiResponse.success(SuccessMessage.USER_ADD_BOOK_SUCCESS);
     }
+
 
 }
