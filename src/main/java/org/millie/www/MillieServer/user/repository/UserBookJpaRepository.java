@@ -1,5 +1,6 @@
-package org.millie.www.MillieServer.user;
+package org.millie.www.MillieServer.user.repository;
 
+import org.millie.www.MillieServer.user.domain.UserBook;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

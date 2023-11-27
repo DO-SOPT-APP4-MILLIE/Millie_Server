@@ -1,19 +1,17 @@
 package org.millie.www.MillieServer.book;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.millie.www.MillieServer.book.dto.response.BookGetResponse;
 import org.millie.www.MillieServer.book.dto.response.PostListGetResponse;
 import org.millie.www.MillieServer.common.exception.BusinessException;
 import org.millie.www.MillieServer.common.httpmessage.ExceptionMessage;
-import org.millie.www.MillieServer.user.User;
-import org.millie.www.MillieServer.user.UserBook;
-import org.millie.www.MillieServer.user.UserBookJpaRepository;
-import org.millie.www.MillieServer.user.UserJpaRepository;
+import org.millie.www.MillieServer.user.domain.User;
+import org.millie.www.MillieServer.user.domain.UserBook;
+import org.millie.www.MillieServer.user.repository.UserBookJpaRepository;
+import org.millie.www.MillieServer.user.repository.UserJpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.List;
 
