@@ -1,7 +1,7 @@
 package org.millie.www.MillieServer.user.api;
 
 import lombok.RequiredArgsConstructor;
-import org.millie.www.MillieServer.book.BookService;
+import org.millie.www.MillieServer.book.service.BookService;
 import org.millie.www.MillieServer.book.dto.response.PostListGetResponse;
 import org.millie.www.MillieServer.common.dto.ApiResponse;
 import org.millie.www.MillieServer.common.httpmessage.SuccessMessage;
