@@ -16,6 +16,12 @@
 <br/>
 <br/>
 
+## Project Architecture
+![image](https://github.com/DO-SOPT-APP4-MILLIE/Millie_Server/assets/74230343/fc248041-bb2c-45b2-ac7e-5b3b38cb689e)
+
+<br/>
+
+
 ## 🗂️ Project Foldering
 
 - **도메인 별로 폴더링할 예정, 작업 완료 후 수정**
