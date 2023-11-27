@@ -59,7 +59,7 @@ public class BookService {
         List<Book> findBooks = new ArrayList<>();//user의 책
         //findBooks에 유저가 소유한 책의 리스트 넣음
         for (UserBook userBook : userBookList) {
-            findBooks.add(bookRepository.findById(userBook.getBook().getId()).get());
+            findBooks.add(bookRepository.findByIdOrThrow(userBook.getBook().getId()));
         }
 
         //유저가 가진 책들의 카테고리는 userBookCategory
@@ -85,7 +85,7 @@ public class BookService {
         List<UserBook> userBookList = userBookRepository.findAllByUser_id(userId);
         List<Book> findBooks = new ArrayList<>();//user의 책
         for (UserBook userBook : userBookList) {
-            findBooks.add(bookRepository.findById(userBook.getBook().getId()).get());
+            findBooks.add(bookRepository.findByIdOrThrow(userBook.getBook().getId()));
         }
 
         //모든 책중 해당 category책 찾음
