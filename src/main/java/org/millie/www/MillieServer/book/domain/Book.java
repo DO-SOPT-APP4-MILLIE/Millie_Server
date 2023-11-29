@@ -43,6 +43,7 @@ public class Book {
 
         private String description;
 
+        private Integer rankChange;
 
 
 }
